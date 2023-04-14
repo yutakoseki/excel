@@ -70,8 +70,6 @@ class Import{
             }
         }
         
-        print_r('<pre>'); print_r($afternoonTeaGramDetails); print_r('</pre>');
-        
         // 書き込み用
         $writeSpreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
         $writeSheet = $writeSpreadsheet->getActiveSheet();
@@ -139,6 +137,6 @@ class Import{
         
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($writeSpreadsheet);
         $writer->save('excel/result.xlsx');
+        echo "集計が完了しました。";
     }
-
 }
